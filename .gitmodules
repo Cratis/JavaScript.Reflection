@@ -1,0 +1,3 @@
+[submodule "Modules/JavaScript.Pipeline"]
+	path = Modules/JavaScript.Pipeline
+	url = https://github.com/Cratis/JavaScript.Pipeline.git

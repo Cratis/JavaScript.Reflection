@@ -1,0 +1,33 @@
+{
+  "name": "cratis.javascript.reflection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cratis/JavaScript.Reflection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cratis/JavaScript.Reflection/issues"
+  },
+  "homepage": "https://github.com/Cratis/JavaScript.Reflection#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.11.4",
+    "babel-plugin-transform-decorators": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "jspm": "^0.17.0-beta.22"
+  },
+  "jspm": {
+    "name": "cratis.javascript.reflection",
+    "main": "cratis.javascript.reflection.js",
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
+    }
+  }
+}
