@@ -7,7 +7,6 @@ module.exports = function (wallaby) {
             { pattern: "node_modules/chai-as-promised/chai-as-promised.js", instrument: false },
             { pattern: "jspm_packages/system.js", instrument: false },
             { pattern: "jspm.config.js", instrument: false },
-            { pattern: "nullTranspiler.js", instrument: false, load: false },
 
             { pattern: "Specifications/**/given/*.js", load: false },
             { pattern: "Source/**/*.js", load: false }
@@ -41,7 +40,7 @@ module.exports = function (wallaby) {
             var should = chai.should();
 
             System.config({
-                transpiler: "none" //./nullTranspiler"
+                transpiler: "none"
             });
 
             System.import("sinon").then(function (s) {
