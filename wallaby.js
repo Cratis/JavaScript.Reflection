@@ -3,9 +3,10 @@
 module.exports = function (wallaby) {
     return {
         files: [
+            { pattern: "jspm_packages/system.js", instrument: false },
             { pattern: "node_modules/chai/chai.js", instrument: false },
             { pattern: "node_modules/chai-as-promised/chai-as-promised.js", instrument: false },
-            { pattern: "jspm_packages/system.js", instrument: false },
+            { pattern: "node_modules/sinon/lib/sinon.js", instrument: false },
             { pattern: "jspm.config.js", instrument: false },
 
             { pattern: "Specifications/**/given/*.js", load: false },
@@ -23,7 +24,6 @@ module.exports = function (wallaby) {
         },
 
         env: {
-            //type: "node",
             kind: "electron"
         },
 
@@ -32,32 +32,27 @@ module.exports = function (wallaby) {
         },
 
         setup: (wallaby) => {
-
-            console.log("exports : " + typeof exports);
             wallaby.delayStart();
 
             window.expect = chai.expect;
             var should = chai.should();
 
             System.config({
+                defaultJSExtensions:true,
                 transpiler: "none"
             });
 
-            System.import("sinon").then(function (s) {
-                window.sinon = s;
+            var promises = [];
+            for (var i = 0, len = wallaby.tests.length; i < len; i++) {
+                promises.push(System['import'](wallaby.tests[i]));
+            }
 
-                var promises = [];
-                for (var i = 0, len = wallaby.tests.length; i < len; i++) {
-                    promises.push(System['import'](wallaby.tests[i]));
-                }
-
-                Promise.all(promises).then(function () {
-                    wallaby.start();
-                }).catch(function (e) {
-                    setTimeout(function () {
-                        throw e;
-                    }, 0);
-                });
+            Promise.all(promises).then(function () {
+                wallaby.start();
+            }).catch(function (e) {
+                setTimeout(function () {
+                    throw e;
+                }, 0);
             });
         },
 

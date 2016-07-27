@@ -38,14 +38,13 @@
     "jasmine-core": "^2.4.1",
     "jspm": "^0.17.0-beta.22",
     "multimatch": "^2.1.0",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "sinon": "^1.17.4"
   },
   "jspm": {
     "name": "cratis.javascript.reflection",
     "main": "cratis.javascript.reflection.js",
-    "dependencies": {
-      "sinon": "npm:sinon@^1.17.5"
-    },
+    "dependencies": {},
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
     },
@@ -56,13 +55,6 @@
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
       "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
-    },
-    "overrides": {
-      "npm:inherits@2.0.1": {
-        "ignore": [
-          "test.js"
-        ]
-      }
     }
   }
 }
