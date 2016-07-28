@@ -16,7 +16,7 @@ SystemJS.config({
     packages: {
         "cratis.javascript.reflection": {
             "main": "cratis.javascript.reflection.js",
-            "format": "esm",
+            "format": "csj",
             "defaultExtension": "js",
             "meta": {
                 "*.js": {
