@@ -1,2 +1,2 @@
 "use strict";
-module.exports = require("./node_modules/cratis.javascript.pipeline/wallaby");
+module.exports = require("./Modules/Javascript.Pipeline/wallaby");
