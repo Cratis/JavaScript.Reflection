@@ -39,7 +39,13 @@ module.exports = function (wallaby) {
 
             System.config({
                 defaultJSExtensions:true,
-                transpiler: "none"
+                transpiler: false,
+                packages: {
+                    "cratis.javascript.reflection": {
+                        format: "cjs",
+                        meta: {"*.js": {}}
+                    }
+                }
             });
 
             var promises = [];
