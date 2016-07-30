@@ -22,7 +22,7 @@ SystemJS.config({
     transpiler: "plugin-babel",
     packages: {
         "cratis-javascript-reflection": {
-            "main": "index.js",
+            "main": "Distribution/index.js",
             "format": "csj",
             "defaultExtension": "js",
             "meta": {

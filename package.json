@@ -2,9 +2,11 @@
   "name": "cratis-javascript-reflection",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Distribution/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "git submodule update --init --recursive",
+    "postinstall": "jspm install"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,7 @@
   },
   "jspm": {
     "name": "cratis-javascript-reflection",
-    "main": "index.js",
+    "main": "Distribution/index.js",
     "dependencies": {},
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
