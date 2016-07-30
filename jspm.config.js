@@ -1,6 +1,6 @@
 SystemJS.config({
     paths: {
-        "cratis-javascript-reflection/": "src/"
+        "cratis-javascript-reflection/": "Source/"
     },
     browserConfig: {
         "paths": {
